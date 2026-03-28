@@ -1041,7 +1041,7 @@ document.getElementById("form").addEventListener("submit", async function(e) {
         Cholesterol_Level: parseInt(document.getElementById("Cholesterol_Level").value)
     };
 
-    const response = await fetch("http://127.0.0.1:8000/predict", {
+    const response = await fetch("https://your-app-name.onrender.com/predict", {   
         method: "POST",
         headers: {
             "Content-Type": "application/json"
