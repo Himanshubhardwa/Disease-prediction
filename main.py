@@ -10,7 +10,7 @@ app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 # app.mount("/static", StaticFiles(directory="static"), name="static")
 
-model = joblib.load("model.pkl")
+model = pickle.load(open("model.pkl", "rb"))
 threshold = 0.3
 
 
