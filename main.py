@@ -5,7 +5,19 @@ from fastapi.staticfiles import StaticFiles
 import joblib
 import numpy as np
 
+from fastapi.middleware.cors import CORSMiddleware
+
+
+
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # sab allow (abhi ke liye)
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 templates = Jinja2Templates(directory="templates")
 # app.mount("/static", StaticFiles(directory="static"), name="static")
